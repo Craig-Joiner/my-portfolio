@@ -3,12 +3,41 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
-const Contact = () => {
+export default function ContactForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
+
+    emailjs.send(
+      'service_ap298cu',   
+      'template_kuix1da',  
+      {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+      },
+      'your_public_key'    // Replace with your EmailJS Public Key
+    )
+    .then(() => {
+      alert('Message sent successfully!');
+      // Clear the form fields
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    })
+    .catch((error) => {
+      console.error('Failed to send message:', error);
+      alert('Failed to send message. Please try again later.');
+    });
   };
 
   const contactInfo = [
@@ -18,7 +47,6 @@ const Contact = () => {
       value: "Email Me",
       link: "mailto:wjoiner1706@gmail.com",
     },
-   
     {
       icon: MapPin,
       title: "Location",
@@ -38,7 +66,6 @@ const Contact = () => {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/william-joiner-334935204",
     },
-  
   ];
 
   return (
@@ -66,21 +93,32 @@ const Contact = () => {
                   <Input
                     placeholder="Your Name"
                     className="border-slate-200 focus:border-blue-500"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
                   />
                   <Input
                     type="email"
                     placeholder="Your Email"
                     className="border-slate-200 focus:border-blue-500"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <Input
                   placeholder="Subject"
                   className="border-slate-200 focus:border-blue-500"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
                 <Textarea
                   placeholder="Your Message"
                   rows={6}
                   className="border-slate-200 focus:border-blue-500"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                 />
                 <Button
                   type="submit"
@@ -141,15 +179,13 @@ const Contact = () => {
               <p className="mb-4">
                 I'm currently available for freelance work and full-time opportunities.
               </p>
-              <a 
-              href="/resume.pdf" download>
-              <Button
-                variant="secondary"
-                className="bg-white text-blue-600 hover:bg-gray-100"
-              >
-                
-                Download Resume
-              </Button>
+              <a href="/resume.pdf" download>
+                <Button
+                  variant="secondary"
+                  className="bg-white text-blue-600 hover:bg-gray-100"
+                >
+                  Download Resume
+                </Button>
               </a>
             </div>
           </div>
@@ -157,6 +193,4 @@ const Contact = () => {
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
