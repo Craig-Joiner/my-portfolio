@@ -31,8 +31,8 @@ const Projects = () => {
       title: "Portfolio Website",
       description: "Responsive portfolio site with modern animations",
       image: "PortfolioScreenShot.png",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Netlify"],
-      githubUrl: "https://github.com",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+      githubUrl: "https://www.github.com/Craig-Joiner/my-portfolio",
       liveUrl: "",
     },
   ];

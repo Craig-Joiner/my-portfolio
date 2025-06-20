@@ -33,6 +33,8 @@ const Hero = () => {
             >
               View My Work
             </Button>
+            <a 
+             href="Software_Dev_Resume.pdf" download>
             <Button
               variant="outline"
               size="lg"
@@ -40,6 +42,7 @@ const Hero = () => {
             >
               Download CV
             </Button>
+            </a>
           </div>
 
           <div className="flex justify-center space-x-6 mb-12">

@@ -141,13 +141,16 @@ const Contact = () => {
               <p className="mb-4">
                 I'm currently available for freelance work and full-time opportunities.
               </p>
-              <a href="/resume.pdf" download></a>
+              <a 
+              href="/resume.pdf" download>
               <Button
                 variant="secondary"
                 className="bg-white text-blue-600 hover:bg-gray-100"
               >
+                
                 Download Resume
               </Button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Code, Database, Zap, Monitor } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const skills = [
@@ -10,7 +11,7 @@ const About = () => {
     {
       icon: Zap,
       title: "Backend Development",
-      description: "Node.js, Python, PostgreSQL, APIs",
+      description: "Node.js, TypeScript, Supabase, APIs",
     },
     {
       icon: Monitor,
@@ -62,9 +63,11 @@ const About = () => {
             I'm always excited to take on new challenges and collaborate on
             interesting projects.
           </p>
+          <Link to="/contact">
           <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
             Get In Touch
           </button>
+          </Link>
         </div>
       </div>
     </section>
