@@ -16,15 +16,17 @@ export default function ContactForm() {
     e.preventDefault();
 
     emailjs.send(
-      'service_ap298cu',   
-      'template_kuix1da',  
+       import.meta.env.VITE_EMAILJS_SERVICE_ID,
+       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+       
       {
         from_name: name,
         from_email: email,
         subject: subject,
         message: message,
+        time: new Date().toLocaleString(),
       },
-      'your_public_key'    // Replace with your EmailJS Public Key
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY   
     )
     .then(() => {
       alert('Message sent successfully!');
