@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import * as emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -14,6 +14,8 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     emailjs.send(
        import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -25,8 +27,7 @@ export default function ContactForm() {
         subject: subject,
         message: message,
         time: new Date().toLocaleString(),
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY   
+      } 
     )
     .then(() => {
       alert('Message sent successfully!');
