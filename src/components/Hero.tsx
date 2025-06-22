@@ -46,16 +46,16 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="https://github.com"
-              target="https://github.com/Craig-Joiner"
+              href="https://www.github.com/Craig-Joiner"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             >
               <Github className="h-6 w-6 text-slate-700" />
             </a>
             <a
-              href="https://linkedin.com"
-              target="https://www.linkedin.com/in/william-joiner-334935204/"
+              href="https://www.linkedin.com/in/william-joiner-334935204/"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             >
