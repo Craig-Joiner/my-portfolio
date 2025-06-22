@@ -14,7 +14,7 @@ const Projects = () => {
     {
       title: "Course Planning App",
       description: "Designed to help students organize and manage academic goals",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      image: "CoursePlanningToolMobile.png",
       technologies: ["C#", ".Net Maui"],
       githubUrl: "https://www.github.com/Craig-Joiner/Course-Planning-Tool-Mobile",
       liveUrl: "",
