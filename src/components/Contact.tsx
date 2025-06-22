@@ -62,7 +62,7 @@ export default function ContactForm() {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://www.github.com/Craig-Joiner",
+      url: "https://github.com/Craig-Joiner",
     },
     {
       icon: Linkedin,
