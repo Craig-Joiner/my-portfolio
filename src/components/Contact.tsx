@@ -53,7 +53,7 @@ export default function ContactForm() {
     {
       icon: MapPin,
       title: "Location",
-      value: "Nashville, TN",
+      value: "Lubbock, TX",
       link: "#",
     },
   ];
