@@ -67,7 +67,7 @@ export default function ContactForm() {
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/william-joiner-334935204/",
+      url: "https://www.linkedin.com/in/william-joiner-334935204",
     },
   ];
 
